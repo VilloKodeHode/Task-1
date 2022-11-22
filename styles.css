@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  /* display: flex;
+  justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+  background-color: rgb(183, 221, 210);
+
+  animation: fadeInAnimation ease 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+
+span {
+  font-size: 22px;
+}
+
+p {
+  background-color: blueviolet;
+  width: 500px;
+  letter-spacing: 2px;
+  margin: 10px 0 0 10px;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  color: gold;
+
+  /* cursor: none; */
+  /*! viktig */
+  /* user-select: none;  */
+}
+
+p:hover {
+  color: aqua;
+  background-color: brown;
+}
+
+p:active {
+  color: brown;
+  background-color: aqua;
+}
+
+p::first-letter {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: blue;
+  border: red 2px solid;
+}
+
+/* Pseudo */
+
+/* : is pseudo-class */
+/* :: is pseudo-element */
+
+/* ::first-line : selects the first line of each selector element */
+
+/* properties that can be added */
+/* font, color, background,
+ word-spacing, letter-spacing,
+  text-decoration, vertical align,
+   text-transform, line-height, clear */
+
+p::first-line {
+  background-color: blue;
+  word-spacing: 15px;
+  letter-spacing: 8px;
+  line-height: 50px;
+  text-decoration: solid underline red 3px;
+}
+
+/* ::first-letter: select the first letter of each element */
+
+/* properties that can be added. Same as above but also: */
+
+p::selection {
+  background-color: pink;
+  color: black;
+}
+
+h1 {
+  font-size: 40px;
+  color: rgb(75, 65, 11);
+}
+
+h1::first-letter {
+  border: gold 2px solid;
+  background-color: brown;
+  padding: 2px;
+  color: gold;
+}
+
+/* .beforeafter::before {
+  content: "❤️";
+  color: red;
+}
+
+.beforeafter::after {
+  content: "❤️";
+  color: red;
+} */
+
+h2::before {
+  content: "⬜";
+  color: red;
+}
+
+h2::after {
+  content: "⬜";
+  color: red;
+}
+
+h3 {
+  padding-top: 35px;
+  padding-bottom: 45px;
+  color: gold;
+}
+
+h3 :hover {
+  color: none;
+}
+
+li {
+  color: chocolate;
+}
+
+li::marker {
+  color: blue;
+  font-size: 20px;
+}
+
+::placeholder {
+  color: brown;
+  background-color: aqua;
+  font-size: 10px;
+}
+
+textarea {
+  border: 5px black solid;
+}
+
+/*////////////////////////////////////*/
+/* CSS Transitions  */
+/*////////////////////////////////////*/
+
+/* Transition: width, height, color */
+/* transition is shorthand*/
+
+div {
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+  text-align: center;
+}
+
+div.Borox {
+  background-color: rgb(0, 0, 0);
+}
+
+div.Cubie {
+  background-color: rgb(221, 142, 154);
+}
+
+div.Cexy {
+  background-color: rgb(235, 94, 115);
+  border: gold solid 3px;
+}
+
+div.Cubletta {
+  background-color: rgb(248, 42, 73);
+  border: gold solid 3px;
+  box-shadow: 0 0 5px 0 gold;
+}
+
+div.Chy {
+  background-color: darkolivegreen;
+
+  /* transition: (velger alt fra :hover) 
+  (hvor lang tid det tar ved hover) 
+  (hvor lang tid det tar når musen er av elementet) */
+
+  /* transition: width 2s, height 4s; */
+  /* Longhand code: */
+  /* transition-property: width, height;
+  transition-duration: 2s; */
+
+  /*! IKKE kjør transition i :hover! */
+}
+/* div:hover {
+  background-color: orange;
+  width: 200px;
+  height: 200px;
+} */
+
+div.Chy :hover {
+  /* opacity: 0.1; */
+  background-color: rgb(159, 201, 189);
+  color: rgb(146, 199, 184);
+  cursor: none;
+  transition: all 2s 0s ease-in-out; /*? why isnt transition working properly? Tried using it outside of hover... */
+}
+
+.box {
+  /* size and transition duration */
+}
+
+.container:hover .box {
+  /* new width/height */
+}
+
+.one {
+  /* box 1 */
+  /* background-color and transition-timing-function */
+}
+
+.two {
+  /* box 2 */
+  /* background-color and transition-timing-function */
+}
+
+/*////////////////////////////////////*/
+/* CSS Transitions + Transformation  */
+/*////////////////////////////////////*/
+
+div.Broller {
+  background-color: blueviolet;
+  transition: all 2s, transform 20000s 0.5s;
+  transition-timing-function: linear;
+  transform: rotate(3600000deg);
+}
+
+div.Rellorb {
+  background-color: blueviolet;
+  transition: all 2s, transform 20000s 0.8s;
+  transition-timing-function: linear;
+  transform: rotate(-3600000deg);
+}
+
+div.Bix {
+  background-color: rgb(247, 192, 11);
+  transition: all 2s, transform 2s 0.8s;
+  transition-timing-function: linear;
+}
+
+div.Bix:hover {
+  transform: scale(3);
+}
+
+div.Cubptian {
+  margin: 15px;
+  height: 200px;
+  width: 200px;
+  padding-top: 50px;
+  background-color: rgb(31, 45, 175);
+  transition: rotate 1s, transform 2s 0.8s;
+  transition-timing-function: linear;
+}
+
+div.Cubptian:hover {
+  transform: rotate(6000deg);
+}
